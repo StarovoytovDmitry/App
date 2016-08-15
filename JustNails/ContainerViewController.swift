@@ -18,6 +18,9 @@ class ContainerViewController: UIViewController {
     
     var mainNavigationController: UINavigationController!
     var mainViewController: MainViewController!
+    var settingsViewController: SettingsViewController!
+    var mapViewController: MapViewController!
+    weak var leftViewController: LeftPanel?
     
     var currentState: SlideOutState = .BothCollapsed {
         didSet {
@@ -26,13 +29,10 @@ class ContainerViewController: UIViewController {
         }
     }
     
-    var leftViewController: LeftPanel?
-    
     let centerPanelExpandedOffset: CGFloat = 120
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         mainViewController = UIStoryboard.centerViewController()
         mainViewController.delegate = self
         
@@ -48,6 +48,14 @@ class ContainerViewController: UIViewController {
  
     }
     
+    func collapseSidePanels() {
+        switch (currentState) {
+        case .LeftPanelExpanded:
+            toggleLeftPanel()
+        default:
+            break
+        }
+    }
 }
 
 extension ContainerViewController: MainViewControllerDelegate {
@@ -66,13 +74,12 @@ extension ContainerViewController: MainViewControllerDelegate {
         if (leftViewController == nil) {
             leftViewController = UIStoryboard.leftViewController()
             leftViewController!.menu = Menu.allPart()
-            
             addChildLeftPanel(leftViewController!)
         }
     }
     
     func addChildLeftPanel(sidePanelController: LeftPanel) {
-        //leftViewController.delegate = mainViewController
+        sidePanelController.delegate = self
         
         view.insertSubview(sidePanelController.view, atIndex: 0)
         addChildViewController(sidePanelController)
@@ -89,6 +96,7 @@ extension ContainerViewController: MainViewControllerDelegate {
                 self.currentState = .BothCollapsed
                 
                 self.leftViewController!.view.removeFromSuperview()
+                self.leftViewController?.removeFromParentViewController()
                 self.leftViewController = nil;
             }
         }
@@ -106,6 +114,33 @@ extension ContainerViewController: MainViewControllerDelegate {
         } else {
             mainNavigationController.view.layer.shadowOpacity = 0.0
         }
+    }
+}
+
+extension ContainerViewController: LeftMenuDelegate {
+    
+    func menuSelected(index: Int) {
+        if index == 0 {
+            mainNavigationController.viewControllers[0] = mainViewController
+        }
+        if index == 1 {
+            if settingsViewController == nil {
+                settingsViewController = UIStoryboard.settingsViewController()
+                settingsViewController.delegate = self // Делегат если надо
+            }
+            mainNavigationController.viewControllers[0] = settingsViewController
+        }
+        if index == 2 {
+            if mapViewController == nil {
+                mapViewController = UIStoryboard.mapViewController()
+                mapViewController.delegate = self // Делегат если надо
+            }
+            mainNavigationController.viewControllers[0] = mapViewController
+        }
+        view.addSubview(mainNavigationController.view)
+        addChildViewController(mainNavigationController)
+        mainNavigationController.didMoveToParentViewController(self)
+        collapseSidePanels()
     }
 }
 
@@ -149,4 +184,11 @@ private extension UIStoryboard {
         return mainStoryboard().instantiateViewControllerWithIdentifier("MainViewController") as? MainViewController
     }
     
+    class func settingsViewController() -> SettingsViewController? {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("SettingsViewController") as? SettingsViewController
+    }
+    
+    class func mapViewController() -> MapViewController? {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("MapViewController") as? MapViewController
+    }    
 }

@@ -1,19 +1,14 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  JustNails
 //
-//  Created by Дмитрий on 10.08.16.
+//  Created by Дмитрий on 15.08.16.
 //  Copyright © 2016 Dmitry. All rights reserved.
 //
 
 import UIKit
 
-@objc
-protocol MainViewControllerDelegate {
-    optional func toggleLeftPanel()
-}
-
-class MainViewController: UIViewController {
+class MapViewController: UIViewController {
     
     var delegate: MainViewControllerDelegate?
     

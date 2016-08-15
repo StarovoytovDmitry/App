@@ -6,8 +6,13 @@
 //  Copyright © 2016 Dmitry. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    var delegate: MainViewControllerDelegate?
+    
+    @IBAction func showLeftPanel(sender: AnyObject) {
+        delegate?.toggleLeftPanel?()
+    }
 }

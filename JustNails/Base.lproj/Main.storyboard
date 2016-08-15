@@ -96,7 +96,33 @@
             </objects>
             <point key="canvasLocation" x="-383" y="394"/>
         </scene>
-        <!--Menu-->
+        <!--Map-->
+        <scene sceneID="02e-ms-u1W">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="4ah-ni-fqU" customClass="MapViewController" customModule="JustNails" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4kg-oU-wYs"/>
+                        <viewControllerLayoutGuide type="bottom" id="TAM-zR-5dg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wUv-iY-CMO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="vVg-zN-dfA">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="YmO-bn-Pi4">
+                            <connections>
+                                <action selector="showLeftPanel:" destination="4ah-ni-fqU" id="dhW-Ah-R9r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVK-Kl-zrm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="360" y="1731"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="6bM-2U-YEA">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="tEa-xQ-Ke1" customClass="MainViewController" customModule="JustNails" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,8 +136,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Menu" id="fR8-mb-GJd">
-                        <barButtonItem key="leftBarButtonItem" title="OPEN ME" id="9QS-qh-hGa">
+                    <navigationItem key="navigationItem" title="Home" id="fR8-mb-GJd">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="9QS-qh-hGa">
                             <color key="tintColor" red="0.59636157570000004" green="0.060588959929999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="showLeftPanel:" destination="tEa-xQ-Ke1" id="kyw-Kb-VUj"/>
@@ -122,7 +148,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ZS-ak-Dvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="320" y="395"/>
+            <point key="canvasLocation" x="360" y="394"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="lja-T5-jSu">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="Aeo-Da-dMK" customClass="SettingsViewController" customModule="JustNails" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5XH-Il-QEg"/>
+                        <viewControllerLayoutGuide type="bottom" id="2a9-Hh-Cfm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OnV-oA-Ocw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="jIx-Nl-wu8">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="F7L-gz-70a">
+                            <connections>
+                                <action selector="showLeftPanel:" destination="Aeo-Da-dMK" id="UWe-no-qn9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QpW-ku-WLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="360" y="1063"/>
         </scene>
     </scenes>
 </document>

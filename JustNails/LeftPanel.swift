@@ -8,8 +8,9 @@
 
 import UIKit
 
+//@objc
 protocol LeftMenuDelegate {
-    func menuSelected(menu: Menu)
+    func menuSelected(index: Int)
 }
 
 class LeftPanel: UIViewController {
@@ -55,8 +56,7 @@ extension LeftPanel: UITableViewDataSource {
 extension LeftPanel: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedMenu = menu[indexPath.row]
-        delegate?.menuSelected(selectedMenu)
+        delegate?.menuSelected(indexPath.row)
     }
     
 }
@@ -70,7 +70,6 @@ class MenuCell: UITableViewCell {
         imageViewCell.image = menu.image
         imageNameCell.text = menu.title
     }
-    
 }
 
 
