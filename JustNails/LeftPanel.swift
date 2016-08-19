@@ -28,6 +28,9 @@ class LeftPanel: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
+        
+        let nib = UINib(nibName: "Cell", bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: "Cell")
     }
 }
 
@@ -44,7 +47,10 @@ extension LeftPanel: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(TableView.CellIdentifiers.MenuCell, forIndexPath: indexPath) as! MenuCell
+        
+        //let cell = tableView.dequeueReusableCellWithIdentifier(TableView.CellIdentifiers.MenuCell, forIndexPath: indexPath) as! MenuCell
+        //cell.configureForMenu(menu[indexPath.row])
+        let cell: TableViewCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! TableViewCell
         cell.configureForMenu(menu[indexPath.row])
         return cell
     }
@@ -60,7 +66,7 @@ extension LeftPanel: UITableViewDelegate {
     }
     
 }
-
+/*
 class MenuCell: UITableViewCell {
     
     @IBOutlet weak var imageViewCell: UIImageView!
@@ -71,5 +77,4 @@ class MenuCell: UITableViewCell {
         imageNameCell.text = menu.title
     }
 }
-
-
+*/

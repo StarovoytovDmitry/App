@@ -18,9 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="97K-iV-WP8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="97K-iV-WP8">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="RC2-N4-I3I">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -29,7 +30,6 @@
                                             <rect key="frame" x="8" y="8" width="584" height="84"/>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.59636157570000004" green="0.060588959929999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="X6d-Vb-0OG" secondAttribute="bottom" id="EG0-ps-Kmd"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="X6d-Vb-0OG" secondAttribute="trailing" id="FNC-hY-w3c"/>
@@ -39,20 +39,20 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MenuCell" id="8b7-Yi-Oa2" customClass="MenuCell" customModule="JustNails" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="128" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="150" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8b7-Yi-Oa2" id="InL-gb-DPb">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gCa-sT-QIZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="43" id="RZ4-uP-Kc6"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxF-Ar-SRH">
-                                                    <rect key="frame" x="43" y="11" width="557" height="21"/>
+                                                    <rect key="frame" x="43" y="11" width="557" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -111,6 +111,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="vVg-zN-dfA">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="YmO-bn-Pi4">
+                            <color key="tintColor" red="0.59636157570000004" green="0.060588959929999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="showLeftPanel:" destination="4ah-ni-fqU" id="dhW-Ah-R9r"/>
                             </connections>
@@ -165,6 +166,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="jIx-Nl-wu8">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="F7L-gz-70a">
+                            <color key="tintColor" red="0.59636157570000004" green="0.060588959929999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="showLeftPanel:" destination="Aeo-Da-dMK" id="UWe-no-qn9"/>
                             </connections>
